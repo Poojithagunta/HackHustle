@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FiInstagram, FiLinkedin, FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiLinkedin, FiGithub } from "react-icons/fi";
 import { judges } from "../public/judges";
 import BlurText from "@/components/BlurText";
 
@@ -46,7 +46,15 @@ export default function Judges() {
 
 /* --- Interactive Judge Card Component --- */
 
-function JudgeCard({ judge, index }: { judge: any; index: number }) {
+interface Judge {
+  name: string;
+  image: string;
+  role: string;
+  linkedin: string;
+  github: string;
+}
+
+function JudgeCard({ judge, index }: { judge: Judge; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

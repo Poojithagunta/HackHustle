@@ -10,7 +10,6 @@ import {
   Linkedin,
   MapPin,
   Mail,
-  Phone,
   ArrowUp
 } from "lucide-react";
 import BlurText from "@/components/BlurText";

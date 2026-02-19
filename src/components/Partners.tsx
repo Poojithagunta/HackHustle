@@ -1,10 +1,9 @@
 "use client";
 
-import { motion, useAnimationFrame, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { partners } from "../public/partners";
 import BlurText from "@/components/BlurText";
-import { useRef, useState } from "react";
 
 export default function Partners() {
   // We triple the array to ensure no gaps on massive screens (4K+)
@@ -80,7 +79,7 @@ export default function Partners() {
 }
 
 // Sub-component for individual logo cards to keep things clean
-function PartnerCard({ partner }: { partner: any }) {
+function PartnerCard({ partner }: { partner: { logo: string; name: string } }) {
   return (
     <div className="relative group/card flex-shrink-0">
       {/* Card Border Glow Effect */}

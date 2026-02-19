@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { features } from '../public/features';
 import BlurText from "@/components/BlurText";
 
@@ -54,7 +54,7 @@ export default function About() {
             className="relative"
           >
             <p className="text-gray-400 max-w-3xl mx-auto text-lg md:text-2xl font-light leading-relaxed">
-              HackHustle isn't just a competition; it's a <span className="text-white font-medium">24-hour reality distortion field</span> where the brightest minds converge to build the future.
+              HackHustle isn&apos;t just a competition; it&apos;s a <span className="text-white font-medium">24-hour reality distortion field</span> where the brightest minds converge to build the future.
             </p>
           </motion.div>
         </div>
@@ -70,7 +70,13 @@ export default function About() {
   );
 }
 
-function FeatureCard({ feature, index }: { feature: any; index: number }) {
+interface Feature {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+}
+
+function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   // Spotlight Position

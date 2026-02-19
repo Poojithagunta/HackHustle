@@ -91,7 +91,7 @@ export default function Contact() {
 
 /* --- Helper Components --- */
 
-function ContactInfoCard({ icon, title, details, delay }: any) {
+function ContactInfoCard({ icon, title, details, delay }: { icon: React.ReactNode; title: string; details: string[]; delay: number }) {
     return (
         <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -113,7 +113,7 @@ function ContactInfoCard({ icon, title, details, delay }: any) {
     );
 }
 
-function FloatingInput({ label, ...props }: any) {
+function FloatingInput({ label, ...props }: React.ComponentProps<typeof Input> & { label: string }) {
     return (
         <div className="space-y-2 flex flex-col">
             <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-blue-400 ml-1">

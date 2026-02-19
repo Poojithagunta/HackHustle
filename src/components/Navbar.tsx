@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
@@ -116,7 +116,7 @@ export default function Navbar() {
   );
 }
 
-function NavLinks({ mobile, setIsOpen }: { mobile?: boolean; setIsOpen?: any }) {
+function NavLinks({ mobile, setIsOpen }: { mobile?: boolean; setIsOpen?: (isOpen: boolean) => void }) {
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
 
   const links = [

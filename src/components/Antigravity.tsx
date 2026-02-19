@@ -23,7 +23,7 @@ interface MouseState {
     radius: number;
 }
 
-const AntiGravityBackground: React.FC<any> = (props) => {
+const AntiGravityBackground: React.FC<{ className?: string }> = (props) => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
     // Use a ref for mouse to avoid re-renders but keep values accessible
